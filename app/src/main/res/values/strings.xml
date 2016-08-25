@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Raspberry Control</string>
+    <string name="led1_text">Led 1</string>
+    <string name="led2_text">Led 2</string>
+    <string name="led2_bt_text">Led 3</string>
+    <string name="action_settings">Settings</string>
+</resources>
