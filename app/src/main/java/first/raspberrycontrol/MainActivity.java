@@ -27,18 +27,13 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /********************************/
-         /*    Define all the buttons    */
-        /********************************/
+      
         Switch led1 = (Switch) findViewById(R.id.Led1);
         ToggleButton led2 = (ToggleButton) findViewById(R.id.Led2);
         Button led3 = (Button) findViewById(R.id.Led3);
 
 
-        /*******************************************************/
-         /*  Set an onclick/onchange listener for every button  */
-        /*******************************************************/
-
+   
         led1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -84,9 +79,7 @@ public class MainActivity extends Activity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+      
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -97,17 +90,11 @@ public class MainActivity extends Activity{
         return super.onOptionsItemSelected(item);
     }
 
-    /*****************************************************/
-       /*  This is a background process for connecting      */
-      /*   to the arduino server and sending               */
-     /*    the GET request withe the added data           */
-    /*****************************************************/
-
+   
     private class Background_get extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             try {
-                /* Change the IP to the IP you set in the arduino sketch */
                 URL url = new URL("http://192.168.2.37/?" + params[0]);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
